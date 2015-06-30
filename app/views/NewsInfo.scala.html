@@ -1,4 +1,4 @@
-@(newsmessage:News)
+@(newsmessage:NewsDetail,commentmsg:List[Comment])
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +12,9 @@
 </head>
 <body>
 	<div class="news_content">
-		<p class="t_newsinfo">@newsmessage.newsTitle</p>
-		<p class="about_news">人民大学新闻网</p>
-		<p class="about_news" style="padding-bottom: 10px;">2015-06-28
-			07:26</p>
+		<p class="t_newsinfo">@newsmessage.newsFullTitle</p>
+		<p class="about_news">@newsmessage.editor</p>
+		<p class="about_news" style="padding-bottom: 10px;">@newsmessage.registTime</p>
 		<div class="news_part">
 			<br>
 			<div style="text-align: center;">
@@ -43,20 +42,19 @@
 					<div id="aaa">
 					
 					
-					<!-- for(gs <- goodsview){ -->
+					@for(comment <- commentmsg){
 						<div class="qusans_bd bdbtline" id="ss" style="padding: 10px 0;">
 							<div class="qusans_bdl" onclick="priseCommtHotqa(2054422,'82')"
 								id="2054422">
 								<img src="../img/ydw_zan.png">
-								<p>81</p>
+								
 							</div>
 							<div class="qusans_bdr">
-								<h3>九爷：</h3>
-								<div class="qusans_bdrtxt" id="ans_ct2054422">欢迎来上海 报考
-									上海交通大学 复旦大学 同济大学 上海财经大学 华东师范大学 华东政法大学 上海外国语大学</div>
+								<h3>@comment.userid</h3>
+								<div class="qusans_bdrtxt" id="ans_ct2054422">@comment.commentContent</div>
 							</div>
 						</div>
-						<!-- } -->
+						 } 
 					</div>
 					<p>
 						<a id="next" href="javascript:getMoreCommnet();"><span
