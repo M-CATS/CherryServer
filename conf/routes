@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# newspage
+GET     /newspage/:newsid           controllers.WebPage.news(newsid: Long)  
+
+# requestrespnse
+GET     /response                   controllers.RequestResponse.index()
+POST    /response/login             controllers.RequestResponse.login()
+POST    /response/regist            controllers.RequestResponse.regist()
+GET     /response/getnewsbytags/tags     controllers.RequestResponse.getNewsListByTags(tags: String)
+GET     /response/getnewslatest     controllers.RequestResponse.getnewslatest()
+GET     /response/search/kwd        controllers.RequestResponse.search(kws: String)
+POST    /response/usertagupdate     controllers.RequestResponse.userTagsUpdate()
+POST    /response/comment           controllers.RequestResponse.comment()
+POST    /response/collection/add    controllers.RequestResponse.collectionAdd()
+POST    /response/collection/remove controllers.RequestResponse.collectionRemove()
