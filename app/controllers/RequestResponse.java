@@ -1,7 +1,10 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.json.JSONObject;
 
 import models.Comment;
 import models.News;
@@ -13,13 +16,15 @@ import play.data.Form;
 import play.mvc.*;
 import views.html.*;
 
+
 public class RequestResponse extends Controller {
 
 	public static Result index() {
 		String json = "['name':'lxx','age':'180']";
 		// DynamicForm din = Form.form().bindFromRequest();
 		// String sq = din.get("quantity");
-		return ok(json);
+		JSONObject js=new JSONObject();
+		return ok();
 	}
 
 	public static Result login() {
@@ -28,11 +33,13 @@ public class RequestResponse extends Controller {
 		String pwd = din.get("password");
 		Users beanuser = Users.findByid(userid);
 		if (beanuser.pwd.equals(pwd)) {
-			//
+//			ObjectNode ja=Json.newObject();
+//			ja.put("userid",beanuser.userid);
+//			ja.put("username",beanuser.username);
+//			ja.putArray(arg0);
 			return ok();
 		} else {
-			//
-			return ok();
+			return ok("");
 		}
 	}
 
@@ -46,10 +53,14 @@ public class RequestResponse extends Controller {
 		beanuser.registTime = new Date();
 		beanuser.username = "牛逼的用户951" + Users.findQuantity();
 		beanuser.save();
+//		ObjectNode ja=Json.newObject();
+//		ja.put("userid",beanuser.userid);
+//		ja.put("username",beanuser.username);
 		return ok();
 	}
 
 	public static Result getNewsListByTags(String tags) {
+		
 		return ok();
 	}
 
