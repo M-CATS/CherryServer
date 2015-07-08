@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(E:\git\CherryServer\conf\application.conf,E:\git\CherryServer\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(E:\git\CherryServer\conf\evolutions,E:\git\CherryServer\target\scala-2.10\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(E:\git\CherryServer\conf\routes,E:\git\CherryServer\target\scala-2.10\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(E:\git\CherryServer\conf\evolutions\default,E:\git\CherryServer\target\scala-2.10\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(E:\git\CherryServer\conf\evolutions\default\1.sql,E:\git\CherryServer\target\scala-2.10\classes\evolutions\default\1.sql)[0m
